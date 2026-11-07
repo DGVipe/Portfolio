@@ -52,7 +52,7 @@ export const site = {
     paragraphs: [
       {
         en: "I'm a computer science engineer with a passion for learning and for building solutions that are long lasting, reliable, efficient, and accessible to anyone who needs them. I care about clean architecture, honest trade-offs, and leaving codebases as tidy as possible",
-        es: "Soy ingeniero en computación y me apasiona aprender y construir soluciones que perduren y sean confiables, eficientes y accesibles para cualquiera que las necesite. Me importan la arquitectura limpia, la honestidad al evaluar compromisos técnicos y dejar el código lo más ordenado posible.",
+        es: "Soy ingeniero civil informático y me apasiona aprender y construir soluciones que perduren y sean confiables, eficientes y accesibles para cualquiera que las necesite. Me importan la arquitectura limpia, la honestidad al evaluar compromisos técnicos y dejar el código lo más ordenado posible.",
       },
       {
         en: "Every problem has many possible solutions. Finding an efficient one and making it work is what excites me most, and it's what keeps me researching and discovering new ways to solve each challenge.",
