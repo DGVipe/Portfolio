@@ -35,7 +35,7 @@ const en = {
   contact: {
     copyEmail: "Copy email address",
     copied: "Email copied to clipboard",
-    copyFailed: "Couldn't copy — please copy it manually.",
+    copyFailed: "Couldn't copy - please copy it manually.",
     form: {
       label: "Contact form",
       name: "Name",

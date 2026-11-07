@@ -57,7 +57,7 @@ export function ContactForm() {
     }
 
     const subject = f.subject(data.name);
-    const body = `${data.message}\n\n— ${data.name} (${data.email})`;
+    const body = `${data.message}\n\n- ${data.name} (${data.email})`;
     window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     toast.success(f.opening, { description: f.openingHint(site.email) });
     form.reset();

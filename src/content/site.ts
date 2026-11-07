@@ -1,5 +1,5 @@
 /**
- * All portfolio content lives here. Edit this file to update the site —
+ * All portfolio content lives here. Edit this file to update the site -
  * no component changes required.
  *
  * Any text field accepts either a plain string (same in every language) or
@@ -44,7 +44,7 @@ export const site = {
   url: "https://www.diegoalveal.com",
   location: "Victoria, Chile" as Text,
   email: EMAIL,
-  /** CV file in /public, downloaded by the header's CV button — one path, or one per language. */
+  /** CV file in /public, downloaded by the header's CV button - one path, or one per language. */
   cv: { en: "/cv-en.pdf", es: "/cv-es.pdf" } as Text,
 
   about: {

@@ -29,7 +29,7 @@ const geistMono = Geist_Mono({
 });
 
 const titles = Object.fromEntries(
-  LOCALES.map((l) => [l, `${site.name} — ${localize(site.role, l)}`]),
+  LOCALES.map((l) => [l, `${site.name} - ${localize(site.role, l)}`]),
 ) as Record<Locale, string>;
 
 export const metadata: Metadata = {
