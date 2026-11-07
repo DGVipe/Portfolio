@@ -6,7 +6,7 @@ with light and dark themes.
 Built with Next.js 16 (App Router, Cache Components), Tailwind CSS v4 and shadcn/ui. There is
 no backend: the contact form opens the visitor's email app with the message pre-filled.
 
-**Status:** in progress, not yet deployed.
+**Status:** deployed at: https://diegoalveal.com/
 
 ## How it works
 
