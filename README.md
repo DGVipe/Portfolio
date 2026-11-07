@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+My personal one-page portfolio: Hero → About → Recent work → Contact, in English and Spanish,
+with light and dark themes.
 
-First, run the development server:
+Built with Next.js 16 (App Router, Cache Components), Tailwind CSS v4 and shadcn/ui. There is
+no backend: the contact form opens the visitor's email app with the message pre-filled.
+
+**Status:** in progress, not yet deployed.
+
+## How it works
+
+- **Language:** set by the ES/EN switch, saved in a `locale` cookie. On a first visit it comes
+  from the browser's `Accept-Language`. The server reads it, so the first paint is already in
+  the right language.
+- **Loading skeleton:** because the language comes from a cookie, the page streams in behind
+  [`page-skeleton.tsx`](src/components/page-skeleton.tsx), a text-free copy of the header and
+  hero. Update it whenever their layout changes.
+
+## Quick start
+
+**Requirements:** Node 20.9+.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev                          # http://localhost:3000
+SKELETON_DELAY_MS=3000 npm run dev   # keep the loading skeleton on screen to inspect it
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Portfolio content** (name, about, skills, projects, socials) is in
+  [`src/content/site.ts`](src/content/site.ts). Any text field takes a plain string for both
+  languages, or `{ en, es }`.
+- **Interface text** (buttons, labels, errors, ARIA) is in
+  [`src/lib/i18n/messages.ts`](src/lib/i18n/messages.ts), under both `en` and `es`.
+- **Project screenshots** go in `public/projects/`. Set `image` on the project to one path, or to
+  `{ en, es }` for a screenshot per language. Without one, a gradient placeholder is shown.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Checks
 
-## Learn More
+Run these before committing:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx tsc --noEmit
+npm run lint
+npm run build   # also catches Cache Components errors
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Import the repo on [Vercel](https://vercel.com/new) and keep the default settings. No environment
+variables are needed.
 
-## Deploy on Vercel
+Set `url` in [`src/content/site.ts`](src/content/site.ts) to your production domain. The
+canonical URL and the social preview image are built from it.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The source code is under the [MIT License](LICENSE).
+
+The MIT License covers the source code only. Content in `src/content/` and `public/` (text,
+photos, screenshots and CV files) is © 2026 Diego Alveal, all rights reserved, and may not be
+reused without permission.
